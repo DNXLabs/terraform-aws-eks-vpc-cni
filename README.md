@@ -62,6 +62,48 @@ module "vpc_cni" {
 
 <!--- BEGIN_TF_DOCS --->
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.13 |
+| aws | >= 3.13, < 4.0 |
+| helm | >= 1.0, < 3.0 |
+| kubernetes | >= 1.10.0, < 3.0.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | >= 3.13, < 4.0 |
+| helm | >= 1.0, < 3.0 |
+| kubernetes | >= 1.10.0, < 3.0.0 |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| cluster\_identity\_oidc\_issuer | The OIDC Identity issuer for the cluster. | `string` | n/a | yes |
+| cluster\_identity\_oidc\_issuer\_arn | The OIDC Identity issuer ARN for the cluster that can be used to associate IAM roles with a service account. | `string` | n/a | yes |
+| cluster\_name | The name of the cluster. | `string` | n/a | yes |
+| crd\_create | Specifies whether to create the VPC-CNI CRD. | `bool` | `true` | no |
+| create\_namespace | Whether to create Kubernetes namespace with name defined by `namespace`. | `bool` | `true` | no |
+| enabled | Variable indicating whether deployment is enabled. | `bool` | `true` | no |
+| helm\_chart\_name | AWS Load Balancer Controller Helm chart name. | `string` | `"aws-vpc-cni"` | no |
+| helm\_chart\_release\_name | AWS Load Balancer Controller Helm chart release name. | `string` | `"aws-vpc-cni"` | no |
+| helm\_chart\_repo | AWS Load Balancer Controller Helm repository name. | `string` | `"https://aws.github.io/eks-charts"` | no |
+| helm\_chart\_version | AWS Load Balancer Controller Helm chart version. | `string` | `"1.1.5"` | no |
+| mod\_dependency | Dependence variable binds all AWS resources allocated by this module, dependent modules reference this variable. | `any` | `null` | no |
+| namespace | AWS VPC CNI Helm chart namespace which the service will be created. | `string` | `"kube-system"` | no |
+| original\_match\_labels | Use the original daemonset matchLabels. | `bool` | `false` | no |
+| region | ECR repository region to use. Should match your cluster. | `string` | `"us-west-2"` | no |
+| service\_account\_name | The kubernetes service account name. | `string` | `"aws-vpc-cni"` | no |
+| settings | Additional settings which will be passed to the Helm chart values, see https://github.com/aws/eks-charts/tree/master/stable/aws-vpc-cni. | `map` | `{}` | no |
+
+## Outputs
+
+No output.
+
 <!--- END_TF_DOCS --->
 
 ## Authors
