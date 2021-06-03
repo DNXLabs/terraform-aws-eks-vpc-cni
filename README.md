@@ -3,7 +3,7 @@
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-eks-vpc-cni/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-eks-vpc-cni/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-eks-vpc-cni)](https://github.com/DNXLabs/terraform-aws-eks-vpc-cni/blob/master/LICENSE)
 
-Terraform module for deploying [AWS Load Balancer Controller](https://github.com/kubernetes-sigs/aws-load-balancer-controller) inside a pre-existing EKS cluster.
+Terraform module for deploying [AWS VPC CNI](https://github.com/aws/amazon-vpc-cni-k8s) inside a pre-existing EKS cluster.
 
 ## Usage
 
