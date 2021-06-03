@@ -9,7 +9,7 @@ Terraform module for deploying [AWS Load Balancer Controller](https://github.com
 
 ```
 module "vpc_cni" {
-  source  = "DNXLabs/terraform-aws-eks-vpc-cni/aws"
+  source  = "DNXLabs/eks-vpc-cni/aws"
   version = "0.1.0"
 
   cluster_identity_oidc_issuer     = module.eks_cluster.cluster_oidc_issuer_url
@@ -45,7 +45,7 @@ done
 
 ```
 module "vpc_cni" {
-  source  = "DNXLabs/terraform-aws-eks-vpc-cni/aws"
+  source  = "DNXLabs/eks-vpc-cni/aws"
   version = "0.1.0"
 
   cluster_identity_oidc_issuer     = module.eks_cluster.cluster_oidc_issuer_url
